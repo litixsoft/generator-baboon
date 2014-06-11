@@ -1,5 +1,5 @@
 Description:
-    Creates a default Baboon app
+    Creates a new toplevel
 
 Example:
-    yo baboon [app-name]
+    yo baboon:toplevel [toplevelname] [pagename]
