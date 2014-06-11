@@ -140,7 +140,7 @@ BaboonGenerator.prototype.askFor = function askFor() {
             },
             type: 'confirm',
             name: 'app_rights_masterloginpage',
-            message: 'Would you like to use ´Master Login Page´?',
+            message: 'Would you like to use a ´Master Login Page´?',
             default: true
         },
 
@@ -167,20 +167,20 @@ BaboonGenerator.prototype.askFor = function askFor() {
             validate: validateIsNumber,
             type: 'input',
             name: 'app_session_maxLife',
-            message: 'Please specified your `maximal Session Lifetime` in seconds:',
+            message: 'Please specified your `maximal session lifetime` in seconds:',
             default: 804600
         },
         {
             validate: validateIsNumber,
             type: 'input',
             name: 'app_session_inactiveTime',
-            message: 'Please specified your RedisIO host. (HOST:PORT)',
+            message: 'Please specified your `session inactive time` in seconds.',
             default: 3600
         },
         {
             type: 'list',
             name: 'app_session_activeStore',
-            message: 'Select your active Sessionstore:',
+            message: 'Select your Sessionstore:',
             choices: [
                 'inMemory',
                 'MongoDB',
