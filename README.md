@@ -32,7 +32,9 @@ $ npm install -g generator-baboon
 Finally, initiate the generator:
 
 ```
-$ yo baboon
+$ mkdir my-new-project && cd $_
+$ yo baboon [app-name]
+$ grunt serve
 ```
 
 ### Getting To Know Yeoman
