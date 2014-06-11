@@ -1,0 +1,15 @@
+{
+    "title": "<%= TopLevelName.toUpperCase() %>",
+    "route": "/<%= TopLevelName %>",
+    "norouting": true,    
+    "controller": "app/<%= TopLevelName %>/*",
+    "app": "<%= TopLevelName %>",
+    "children": [
+        {
+          "title": "<%= TopLevelPageName.toUpperCase() %>",
+          "route": "/<%= TopLevelName %>/<%= TopLevelPageName %>",
+          "controller": "app/<%= TopLevelName %>/<%= TopLevelPageName %>",
+          "app": "<%= TopLevelName %>"
+        }
+    ]
+}

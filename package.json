@@ -1,48 +1,34 @@
 {
     "name": "generator-baboon",
-    "version": "0.1.0",
-    "description": "Yeoman generator for creating Baboon MEAN stack applications, using MongoDB, RedisIO, ExpressJS, AngularJS, SocketIO, and NodeJS",
+    "version": "0.4.0",
+    "description": "Yeoman generator for Baboon",
     "keywords": [
         "yeoman-generator",
-        "mean",
-        "mongodb",
-        "redisio",
-        "socketio",
-        "angularjs",
-        "express",
         "scaffold",
-        "fullstack",
         "framework",
         "component",
         "front-end",
-        "app"
+        "app",
+        "angular",
+        "baboon"
     ],
-    "homepage": "https://github.com/litixsoft/generator-baboon",
-    "bugs": "https://github.com/litixsoft/generator-baboon/issues",
-    "author": {
-        "name": "Litixsoft GmbH",
-        "email": "info@litixsoft.de",
-        "url": "https://github.com/litixsoft"
-    },
-    "main": "app/index.js",
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/litixsoft/generator-baboon.git"
-    },
-    "scripts": {
-        "test": "mocha"
-    },
     "dependencies": {
-        "yeoman-generator": "~0.14.0"
-    },
-    "devDependencies": {
-        "mocha": "~1.14.0"
+        "yeoman-generator": "~0.16.0",
+        "chalk": "^0.4.0"
     },
     "peerDependencies": {
         "yo": ">=1.0.0"
     },
+    "devDependencies": {
+        "grunt": "~0.4.1",
+        "grunt-contrib-jshint": "~0.8.0",
+        "grunt-conventional-changelog": "~1.1.0",
+        "grunt-release": "~0.6.0",
+        "load-grunt-tasks": "~0.3.0",
+        "underscore.string": "~2.3.1"
+    },
     "engines": {
-        "node": ">=0.8.0",
+        "node": ">=0.10.0",
         "npm": ">=1.2.10"
     },
     "licenses": [
@@ -50,4 +36,5 @@
             "type": "MIT"
         }
     ]
+
 }

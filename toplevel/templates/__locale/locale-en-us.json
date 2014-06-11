@@ -1,0 +1,4 @@
+{
+    "PAGEHEADER": "<%= _.humanize(TopLevelName) %> application",
+    "DESCRIPTION": "Place your content here."
+}
