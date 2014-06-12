@@ -27,7 +27,7 @@
     "readmeFilename": "README.md",
     "dependencies": {
         "async": "^0.7.0",
-        "baboon": "git+https://github.com/litixsoft/baboon.git#0.4",
+        "baboon": "^0.4.0",
         "express": "^4.0.0",
         "lx-helpers": "^0.5.1",
         "socket.io": "git+https://github.com/litixsoft/socket.io.git#0.9"
