@@ -5,7 +5,7 @@
 <your documentation starts here>
 
 # Author
-<company>
+<author or company>
 
 # License
 Copyright (C) <year> <company> <info@company.com>

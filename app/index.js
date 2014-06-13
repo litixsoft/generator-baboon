@@ -1,4 +1,5 @@
 'use strict';
+
 var util = require('util');
 var path = require('path');
 var yeoman = require('yeoman-generator');
@@ -19,7 +20,7 @@ var banner =
     '        ░                 ░                              \n' +
     '                                           by Litixsoft  \n';
 
-var BaboonGenerator = module.exports = function BaboonGenerator(args, options) {
+var BaboonGenerator = module.exports = function BaboonGenerator (args, options) {
     yeoman.generators.Base.apply(this, arguments);
 
     this.argument('app_name', { type: String, required: false });
@@ -55,7 +56,7 @@ var BaboonGenerator = module.exports = function BaboonGenerator(args, options) {
 
     this.on('exit', function () {
         var help = [
-            ' I\'m all done. Enter `' + chalk.yellow.bold('grunt serve') + '` to start your application. They will be serve on `' + chalk.yellow.bold(this.baboon.app_protocol + '://localhost:' + this.baboon.app_port) + '`.'
+                ' I\'m all done. Enter `' + chalk.yellow.bold('grunt serve') + '` to start your application. They will be serve on `' + chalk.yellow.bold(this.baboon.app_protocol + '://localhost:' + this.baboon.app_port) + '`.'
         ];
 
         if (this.baboon.app_rights_enabled) {
@@ -68,7 +69,7 @@ var BaboonGenerator = module.exports = function BaboonGenerator(args, options) {
 
 util.inherits(BaboonGenerator, yeoman.generators.Base);
 
-BaboonGenerator.prototype.askFor = function askFor() {
+BaboonGenerator.prototype.askFor = function askFor () {
     var done = this.async();
 
     // Validators
@@ -110,6 +111,22 @@ BaboonGenerator.prototype.askFor = function askFor() {
             name: 'app_name',
             message: 'Whats the name of your baboon application?',
             default: this.app_name
+        },
+        // github?
+        {
+            type: 'confirm',
+            name: 'useGithub',
+            message: 'Would you like to use github?',
+            default: false
+        },
+        {
+            when: function (answer) {
+                return (answer && answer.useGithub === true);
+            },
+            type: 'input',
+            name: 'githubUsername',
+            message: 'Whats the Github username?',
+            default: ''
         },
         {
             validate: validateIsPort,
@@ -200,11 +217,17 @@ BaboonGenerator.prototype.askFor = function askFor() {
         this.baboon.app_protocol = 'http';
         this.baboon.app_session_secret = shasum.digest('hex');
 
+        if(props.githubUsername){
+            this.baboon.repoUrl = 'https://github.com/' + props.githubUsername + '/' + this._.slugify(props.app_name);
+        } else {
+            this.baboon.repoUrl = 'user/repo';
+        }
+
         done();
     }.bind(this));
 };
 
-BaboonGenerator.prototype.app = function app() {
+BaboonGenerator.prototype.app = function app () {
     this.directory('client', 'client');
     this.directory('scripts', 'scripts');
     this.directory('server', 'server');
@@ -214,18 +237,25 @@ BaboonGenerator.prototype.app = function app() {
     this.copy('Gruntfile.js', 'Gruntfile.js');
     this.copy('client_settings.js', 'client_settings.js');
     this.copy('server.js', 'server.js');
+    this.copy('update.bat', 'update.bat');
+    this.copy('update.sh', 'update.sh');
 
     this.copy('.bowerrc', '.bowerrc');
     this.copy('.editorconfig', '.editorconfig');
     this.copy('.jshintrc', '.jshintrc');
+
+    if (this.baboon.useGithub) {
+        this.copy('_gitignore', '.gitignore');
+        this.copy('LICENSE', 'LICENSE');
+    }
 };
 
-BaboonGenerator.prototype.packageFiles = function packageFiles() {
+BaboonGenerator.prototype.packageFiles = function packageFiles () {
     this.template('_package.json', 'package.json');
     this.template('_bower.json', 'bower.json');
     this.template('_readme.md', 'README.md');
 };
 
-BaboonGenerator.prototype.configFiles = function configFiles() {
+BaboonGenerator.prototype.configFiles = function configFiles () {
     this.template('_config.js', 'config.js');
 };
