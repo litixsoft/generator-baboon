@@ -1,4 +1,5 @@
-# generator-baboon [![Build Status](https://secure.travis-ci.org/litixsoft/generator-baboon.svg?branch=master)](https://travis-ci.org/litixsoft/generator-baboon) [![david-dm](https://david-dm.org/litixsoft/generator-baboon.svg?theme=shields.io)](https://david-dm.org/litixsoft/generator-baboon/) [![david-dm](https://david-dm.org/litixsoft/generator-baboon/dev-status.svg?theme=shields.io)](https://david-dm.org/litixsoft/generator-baboon#info=devDependencies&view=table)
+# generator-baboon
+[![Build Status](https://secure.travis-ci.org/litixsoft/generator-baboon.svg?branch=master)](https://travis-ci.org/litixsoft/generator-baboon) [![david-dm](https://david-dm.org/litixsoft/generator-baboon.svg?theme=shields.io)](https://david-dm.org/litixsoft/generator-baboon/) [![david-dm](https://david-dm.org/litixsoft/generator-baboon/dev-status.svg?theme=shields.io)](https://david-dm.org/litixsoft/generator-baboon#info=devDependencies&view=table)
 
 > A generator for [Yeoman](http://yeoman.io).
 
