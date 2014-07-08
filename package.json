@@ -1,6 +1,6 @@
 {
     "name": "generator-baboon",
-    "version": "0.4.4",
+    "version": "0.4.5",
     "description": "Yeoman generator for Baboon",
     "homepage": "https://github.com/litixsoft/generator-baboon",
     "author": "Litixsoft GmbH <info@litixsoft.de> (http://www.litixsoft.de)",
