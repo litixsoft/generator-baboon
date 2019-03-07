@@ -1,3 +1,6 @@
+    Project is deprecated. No continue development, no bugfixing anymore.
+---
+
 # generator-baboon
 [![NPM version](https://badge.fury.io/js/generator-baboon.svg)](http://badge.fury.io/js/generator-baboon)
 [![Build Status](https://secure.travis-ci.org/litixsoft/generator-baboon.svg?branch=master)](https://travis-ci.org/litixsoft/generator-baboon)
